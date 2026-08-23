@@ -32,6 +32,11 @@ SRC_URI += " \
     file://configs/bsp-additions.cfg \
 "
 
+# Nord DTS patches pending upstream kernel PR merge.
+SRC_URI += " \
+    file://0002-arm64-dts-qcom-nord-add-gic-v3-interrupt-controller.patch \
+"
+
 # To build tip of qcom-next branch set preferred
 # virtual/kernel provider to 'linux-qcom-next-upstream'
 BBCLASSEXTEND = "devupstream:target"
