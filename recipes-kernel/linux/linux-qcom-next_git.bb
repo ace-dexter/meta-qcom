@@ -25,6 +25,7 @@ SRCBRANCH ?= "branch=qcom-linux-staging-state-iq10-m0-loop0-20260823T111059"
 SRCBRANCH:class-devupstream ?= "branch=qcom-next"
 
 SRC_URI = "git://github.com/ace-dexter/kernel.git;${SRCBRANCH};protocol=https"
+SRC_URI:class-devupstream = "git://github.com/qualcomm-linux/kernel.git;${SRCBRANCH};protocol=https"
 
 # Additional kernel configs.
 SRC_URI += " \
