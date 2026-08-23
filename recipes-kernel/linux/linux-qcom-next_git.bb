@@ -18,13 +18,13 @@ KERNEL_PAHOLE ?= '${@oe.utils.vartrue("DEBUG_BUILD", bb.utils.contains("BBFILE_C
 do_configure[depends] += '${@oe.utils.vartrue("KERNEL_PAHOLE", "pahole-native:do_populate_sysroot", "", d)}'
 EXTRA_OEMAKE += '${@oe.utils.vartrue("KERNEL_PAHOLE", "", "PAHOLE=false", d)}'
 
-# tag: qcom-next-7.2-rc3-20260731
-SRCREV ?= "8d5dbc1b17adf8fe86a41adcda686785e73f5414"
+# kernel PR: ace-dexter/kernel qcom-linux-staging-state-iq10-m0-loop0-20260823T111059
+SRCREV ?= "202aed8950aaebd6acacdc043a0a073093b47bd0"
 
-SRCBRANCH ?= "nobranch=1"
+SRCBRANCH ?= "branch=qcom-linux-staging-state-iq10-m0-loop0-20260823T111059"
 SRCBRANCH:class-devupstream ?= "branch=qcom-next"
 
-SRC_URI = "git://github.com/qualcomm-linux/kernel.git;${SRCBRANCH};protocol=https"
+SRC_URI = "git://github.com/ace-dexter/kernel.git;${SRCBRANCH};protocol=https"
 
 # Additional kernel configs.
 SRC_URI += " \
