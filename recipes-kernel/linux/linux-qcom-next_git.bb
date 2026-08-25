@@ -18,10 +18,10 @@ KERNEL_PAHOLE ?= '${@oe.utils.vartrue("DEBUG_BUILD", bb.utils.contains("BBFILE_C
 do_configure[depends] += '${@oe.utils.vartrue("KERNEL_PAHOLE", "pahole-native:do_populate_sysroot", "", d)}'
 EXTRA_OEMAKE += '${@oe.utils.vartrue("KERNEL_PAHOLE", "", "PAHOLE=false", d)}'
 
-# kernel PR: ace-dexter/kernel qcom-linux-staging-state-iq10-m0-loop0-20260823T111059
-SRCREV ?= "202aed8950aaebd6acacdc043a0a073093b47bd0"
+# kernel PR: https://github.com/wasimn-qc/kernel/pull/11 (ace-dexter/kernel@qcom-linux-staging-state-iq10-m0-loop0-20260825T193457)
+SRCREV ?= "761918ced3bcf0c880798addb7f975520273b4b4"
 
-SRCBRANCH ?= "branch=qcom-linux-staging-state-iq10-m0-loop0-20260823T111059"
+SRCBRANCH ?= "branch=qcom-linux-staging-state-iq10-m0-loop0-20260825T193457"
 SRCBRANCH:class-devupstream ?= "branch=qcom-next"
 
 SRC_URI = "git://github.com/ace-dexter/kernel.git;${SRCBRANCH};protocol=https"
@@ -30,11 +30,6 @@ SRC_URI:class-devupstream = "git://github.com/qualcomm-linux/kernel.git;${SRCBRA
 # Additional kernel configs.
 SRC_URI += " \
     file://configs/bsp-additions.cfg \
-"
-
-# Nord DTS patches pending upstream kernel PR merge.
-SRC_URI += " \
-    file://0002-arm64-dts-qcom-nord-add-gic-v3-interrupt-controller.patch \
 "
 
 # To build tip of qcom-next branch set preferred
