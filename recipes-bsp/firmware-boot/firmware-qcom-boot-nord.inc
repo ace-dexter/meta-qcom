@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${UNPACKDIR}/${BOOTBINARIES}/LICENSE.qcom-2;md5=16528
 BOOTBINARIES = "NORD_bootbinaries"
 
 SRC_URI = " \
-    https://artifactory-las.qualcomm.com/artifactory/lint-lv-local/nord-test/${BOOTBINARIES}.zip;name=bootbinaries \
+    https://artifactory-las.qualcomm.com/artifactory/lint-lv-local/firmware-artifacts/nord-bootbinaries-20150730.zip;name=bootbinaries \
     "
 
 QCOM_BOOT_IMG_SUBDIR = "nord"

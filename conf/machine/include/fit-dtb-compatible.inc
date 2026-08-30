@@ -61,7 +61,7 @@ FIT_DTB_COMPATIBLE[qcom_sa8775p-qam-r2.0] = "sa8775p-ride-r3"
 
 # ---------- nord ----------
 FIT_DTB_COMPATIBLE[qcom_nord-qam] = "nord-rrd"
-FIT_DTB_COMPATIBLE[qcom_qam8x97p-qam] = "nord-ride"
+FIT_DTB_COMPATIBLE[qcom_qam8x97p-qam] = "nord-ride-sx"
 
 # ---------- monaco ----------
 FIT_DTB_COMPATIBLE[qcom_qcs8275-iot] = \
