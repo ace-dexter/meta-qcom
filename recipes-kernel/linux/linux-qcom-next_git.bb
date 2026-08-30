@@ -18,10 +18,10 @@ KERNEL_PAHOLE ?= '${@oe.utils.vartrue("DEBUG_BUILD", bb.utils.contains("BBFILE_C
 do_configure[depends] += '${@oe.utils.vartrue("KERNEL_PAHOLE", "pahole-native:do_populate_sysroot", "", d)}'
 EXTRA_OEMAKE += '${@oe.utils.vartrue("KERNEL_PAHOLE", "", "PAHOLE=false", d)}'
 
-# kernel PR: https://github.com/wasimn-qc/kernel/pull/11 (ace-dexter/kernel@qcom-linux-staging-state-iq10-m0-loop0-20260825T193457)
-SRCREV ?= "761918ced3bcf0c880798addb7f975520273b4b4"
+# kernel PR: https://github.com/wasimn-qc/kernel/pull/11 (ace-dexter/kernel@qcom-linux-staging-state-iq10-m0-loop0-20260830T042743)
+SRCREV ?= "5319e909c117241eb89f97dd3579907b46746301"
 
-SRCBRANCH ?= "branch=qcom-linux-staging-state-iq10-m0-loop0-20260825T193457"
+SRCBRANCH ?= "branch=qcom-linux-staging-state-iq10-m0-loop0-20260830T042743"
 SRCBRANCH:class-devupstream ?= "branch=qcom-next"
 
 SRC_URI = "git://github.com/ace-dexter/kernel.git;${SRCBRANCH};protocol=https"
