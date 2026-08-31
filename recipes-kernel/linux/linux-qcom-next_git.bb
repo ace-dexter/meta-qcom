@@ -18,13 +18,13 @@ KERNEL_PAHOLE ?= '${@oe.utils.vartrue("DEBUG_BUILD", bb.utils.contains("BBFILE_C
 do_configure[depends] += '${@oe.utils.vartrue("KERNEL_PAHOLE", "pahole-native:do_populate_sysroot", "", d)}'
 EXTRA_OEMAKE += '${@oe.utils.vartrue("KERNEL_PAHOLE", "", "PAHOLE=false", d)}'
 
-# kernel PR: https://github.com/wasimn-qc/kernel/pull/16 (ace-dexter/kernel@qcom-linux-staging-state-iq10-m0-loop0-20260830T065806)
-SRCREV ?= "d09ccf1ef7a453f3188537618b1d2feabeabb3b9"
+# kernel source: qualcomm-linux/kernel@staging/nord (tier-3 fallback; kernel_pr_ref_skip=true)
+SRCREV ?= "75c0ae67fdac0b08e54ed11dfa0fc375f04c680f"
 
-SRCBRANCH ?= "branch=qcom-linux-staging-state-iq10-m0-loop0-20260830T065806"
+SRCBRANCH ?= "branch=staging/nord"
 SRCBRANCH:class-devupstream ?= "branch=qcom-next"
 
-SRC_URI = "git://github.com/ace-dexter/kernel.git;${SRCBRANCH};protocol=https"
+SRC_URI = "git://github.com/qualcomm-linux/kernel.git;${SRCBRANCH};protocol=https"
 SRC_URI:class-devupstream = "git://github.com/qualcomm-linux/kernel.git;${SRCBRANCH};protocol=https"
 
 # Additional kernel configs.
